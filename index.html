@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Concesionaria de Automóviles</title>
+    <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+    <!-- Viewport Meta Tag para Responsividad -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        /* Estilos Generales */
+        body {
+            background-color: #1c1c1c;
+            color: #f8f9fa;
+            font-size: 1rem;
+        }
+        h1, h2, h3 {
+            color: #ffc107;
+        }
+        h1 {
+            font-size: 2.5rem;
+        }
+        a {
+            color: #ffc107;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        p, li {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+        /* Ajustes de Contraste en Tablas */
+        .table thead th {
+            background-color: #343a40; /* Fondo más oscuro */
+            color: #ffffff; /* Texto blanco para mejor contraste */
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+        .table tbody td {
+            color: #f8f9fa;
+            font-size: 1rem;
+            vertical-align: middle;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #2c2c2c; /* Color más oscuro para mayor contraste */
+        }
+        .table-striped tbody tr:nth-of-type(even) {
+            background-color: #343a40; /* Color ligeramente más claro */
+        }
+        .table-hover tbody tr:hover {
+            background-color: #495057; /* Color más claro al pasar el cursor */
+        }
+        /* Colores y resaltados */
+        .highlight {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .bg-custom {
+            background-color: #343a40;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        /* Logo de la Organización */
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        /* Espaciado para el contenido */
+        .content {
+            padding-top: 20px;
+        }
+        /* Ajustes para dispositivos móviles */
+        @media (max-width: 576px) {
+            body {
+                margin: 10px;
+                font-size: 1.2rem;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.8rem;
+            }
+            p, li {
+                font-size: 1.1rem;
+            }
+            .table thead th, .table tbody td {
+                font-size: 1.1rem;
+            }
+            .logo {
+                max-width: 100px;
+            }
+        }
+        /* Estilo de Tablas */
+        .table {
+            border-collapse: separate;
+            border-spacing: 0;
+            border: 1px solid #495057;
+        }
+        .table th, .table td {
+            padding: 12px 15px;
+            border: 1px solid #495057;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container content">
+
+        <!-- Encabezado con Título y Logo -->
+        <div class="row align-items-center mb-5">
+            <div class="col-12 col-md-8 text-center text-md-start mb-3 mb-md-0">
+                <h1 class="text-uppercase">Proyecto: Concesionaria de Autos</h1>
+                <h3 class="mb-3">Presentado por: Facundo Gonzalez y Alejandra Furchi</h3>
+                <h5 class="mb-0">Fecha: miércoles 13 de noviembre de 2024</h5>
+            </div>
+            <div class="col-12 col-md-4 text-center text-md-end">
+                <img src="/logo.png" alt="Logo de la Organización" class="logo">
+            </div>
+        </div>
+
+        <!-- Índice -->
+        <div class="mb-5 bg-custom">
+            <h2 class="text-uppercase mb-4"><i class="bi bi-list-ul"></i> Índice</h2>
+            <ol class="list-group list-group-numbered">
+                <li class="list-group-item"><a href="#introduccion">Introducción</a></li>
+                <li class="list-group-item"><a href="#objetivos">Objetivos de la Proyección</a></li>
+                <li class="list-group-item"><a href="#supuestos">Supuestos Iniciales</a></li>
+                <li class="list-group-item"><a href="#calculo-primas">Cálculo de Primas Anuales y Comisiones</a></li>
+                <li class="list-group-item"><a href="#analisis-escenarios">Análisis de Escenarios</a></li>
+                <li class="list-group-item"><a href="#proyeccion-ventas">Proyección de Ventas Mensuales de Pólizas</a></li>
+                <li class="list-group-item"><a href="#distribucion-polizas">Distribución de Pólizas por Tipo de Cobertura</a></li>
+                <li class="list-group-item"><a href="#calculo-ingresos">Cálculo de Ingresos Mensuales por Tipo de Cobertura</a></li>
+                <li class="list-group-item"><a href="#proyeccion-ingresos">Proyección de Ingresos Semestrales</a></li>
+                <li class="list-group-item"><a href="#estrategias">Estrategias Adicionales</a></li>
+                <li class="list-group-item"><a href="#consideraciones">Consideraciones Adicionales</a></li>
+                <li class="list-group-item"><a href="#conclusiones">Conclusiones</a></li>
+                <li class="list-group-item"><a href="#recomendaciones">Recomendaciones</a></li>
+                <li class="list-group-item"><a href="#anexos">Anexos</a></li>
+                <li class="list-group-item"><a href="#preguntas">Preguntas y Respuestas</a></li>
+                <li class="list-group-item"><a href="#reflexion">Reflexión y Análisis Financiero</a></li>
+            </ol>
+        </div>
+
+        <!-- Secciones del Proyecto -->
+        <!-- Introducción -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="introduccion" class="card-title"><i class="bi bi-info-circle"></i> 1. Introducción</h2>
+                    <p><strong>Contexto del Proyecto:</strong></p>
+                    <p>Este proyecto estima los ingresos potenciales de un Productor Asesor de Seguros al colaborar con una concesionaria que vende entre <span class="highlight">50 y 100 vehículos mensuales</span>.</p>
+                    <p><strong>Importancia:</strong></p>
+                    <p>Entender el potencial de ingresos es esencial para la planificación estratégica y financiera en el competitivo sector de seguros automotrices en Argentina.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Objetivos -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="objetivos" class="card-title"><i class="bi bi-bullseye"></i> 2. Objetivos de la Proyección</h2>
+                    <ul>
+                        <li>Estimar los ingresos mensuales y semestrales para diferentes volúmenes de ventas.</li>
+                        <li>Analizar múltiples escenarios entre 50 y 100 vehículos vendidos mensualmente.</li>
+                        <li>Identificar factores clave que afectan los ingresos y proponer estrategias para optimizarlos.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Supuestos Iniciales -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="supuestos" class="card-title"><i class="bi bi-gear"></i> 3. Supuestos Iniciales</h2>
+                    <p><strong>Volumen de Ventas Mensuales de la Concesionaria:</strong></p>
+                    <ul>
+                        <li>Rango de Ventas: Entre <span class="highlight">50 y 100 vehículos</span>.</li>
+                    </ul>
+
+                    <p><strong>Tasa de Conversión de Ventas de Seguros:</strong></p>
+                    <ul>
+                        <li><span class="highlight">Conservadora:</span> 30% de los compradores adquieren seguro.</li>
+                        <li><span class="highlight">Moderada:</span> 40% de los compradores adquieren seguro.</li>
+                        <li><span class="highlight">Optimista:</span> 50% de los compradores adquieren seguro.</li>
+                    </ul>
+
+                    <p><strong>Distribución de Tipos de Cobertura:</strong></p>
+                    <ul>
+                        <li>Terceros Completo: <span class="highlight">60%</span> de las pólizas vendidas.</li>
+                        <li>Todo Riesgo: <span class="highlight">40%</span> de las pólizas vendidas.</li>
+                    </ul>
+
+                    <p><strong>Comisión por Póliza:</strong></p>
+                    <ul>
+                        <li>La comisión es del <span class="highlight">15%</span> de la prima anual, calculada exclusivamente sobre la <strong>prima comisionable</strong>.</li>
+                    </ul>
+
+                    <p><strong>Prima Anual Promedio:</strong></p>
+                    <ul>
+                        <li>Terceros Completo: <span class="highlight">5%</span> del valor del vehículo.</li>
+                        <li>Todo Riesgo: <span class="highlight">10%</span> del valor del vehículo.</li>
+                    </ul>
+
+                    <p><strong>Valor Promedio del Vehículo:</strong></p>
+                    <ul>
+                        <li>Precio Medio: <span class="highlight">$12.000.000</span>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cálculo de Primas Anuales y Comisiones -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="calculo-primas" class="card-title"><i class="bi bi-calculator"></i> 4. Cálculo de Primas Anuales y Comisiones</h2>
+
+                    <p><strong>Prima Anual:</strong></p>
+                    <ul>
+                        <li>Terceros Completo: 5% x $12.000.000 = <strong class="highlight">$600.000</strong>.</li>
+                        <li>Todo Riesgo: 10% x $12.000.000 = <strong class="highlight">$1.200.000</strong>.</li>
+                    </ul>
+
+                    <p><strong>Comisión por Póliza:</strong></p>
+                    <ul>
+                        <li>Terceros Completo: 15% x $600.000 = <strong class="highlight">$90.000</strong>.</li>
+                        <li>Todo Riesgo: 15% x $1.200.000 = <strong class="highlight">$180.000</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Análisis de Escenarios -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="analisis-escenarios" class="card-title"><i class="bi bi-bar-chart-line"></i> 5. Análisis de Escenarios</h2>
+
+                    <p>Para una proyección más detallada, analizaremos tres escenarios de tasas de conversión y diferentes volúmenes de ventas dentro del rango de 50 a 100 vehículos.</p>
+
+                    <p><strong>Escenarios de Tasa de Conversión:</strong></p>
+                    <ul>
+                        <li><span class="highlight">Conservador:</span> 30%</li>
+                        <li><span class="highlight">Moderado:</span> 40%</li>
+                        <li><span class="highlight">Optimista:</span> 50%</li>
+                    </ul>
+
+                    <p><strong>Volúmenes de Ventas Analizados:</strong></p>
+                    <ul>
+                        <li><span class="highlight">50</span> vehículos mensuales</li>
+                        <li><span class="highlight">75</span> vehículos mensuales</li>
+                        <li><span class="highlight">100</span> vehículos mensuales</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyección de Ventas Mensuales de Pólizas -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="proyeccion-ventas" class="card-title"><i class="bi bi-graph-up"></i> 6. Proyección de Ventas Mensuales de Pólizas</h2>
+
+                    <p><strong>Cálculo General:</strong></p>
+                    <p>Pólizas Vendidas = Vehículos Vendidos x Tasa de Conversión</p>
+
+                    <p><strong>Resultados:</strong></p>
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Vehículos Vendidos</th>
+                                    <th class="text-center">30% Conversión</th>
+                                    <th class="text-center">40% Conversión</th>
+                                    <th class="text-center">50% Conversión</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">50</td>
+                                    <td class="text-center">15 pólizas</td>
+                                    <td class="text-center">20 pólizas</td>
+                                    <td class="text-center">25 pólizas</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">75</td>
+                                    <td class="text-center">23 pólizas</td>
+                                    <td class="text-center">30 pólizas</td>
+                                    <td class="text-center">38 pólizas</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">100</td>
+                                    <td class="text-center">30 pólizas</td>
+                                    <td class="text-center">40 pólizas</td>
+                                    <td class="text-center">50 pólizas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p><em>Nota: Para fracciones de pólizas, se considerará el número entero más cercano.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Distribución de Pólizas por Tipo de Cobertura -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="distribucion-polizas" class="card-title"><i class="bi bi-shield-check"></i> 7. Distribución de Pólizas por Tipo de Cobertura</h2>
+
+                    <p><strong>Cálculo General:</strong></p>
+                    <ul>
+                        <li>Terceros Completo: 60% de las pólizas vendidas.</li>
+                        <li>Todo Riesgo: 40% de las pólizas vendidas.</li>
+                    </ul>
+
+                    <p><strong>Ejemplo para 50 vehículos y 30% de conversión (15 pólizas):</strong></p>
+                    <ul>
+                        <li>Terceros Completo: 60% x 15 = <strong class="highlight">9 pólizas</strong>.</li>
+                        <li>Todo Riesgo: 40% x 15 = <strong class="highlight">6 pólizas</strong>.</li>
+                    </ul>
+
+                    <p><strong>Tabla de Distribución:</strong></p>
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Escenario</th>
+                                    <th class="text-center">Terceros Completo</th>
+                                    <th class="text-center">Todo Riesgo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">50 Vehículos - 30% Conversión</td>
+                                    <td class="text-center">9 pólizas</td>
+                                    <td class="text-center">6 pólizas</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">75 Vehículos - 40% Conversión</td>
+                                    <td class="text-center">18 pólizas</td>
+                                    <td class="text-center">12 pólizas</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">100 Vehículos - 50% Conversión</td>
+                                    <td class="text-center">30 pólizas</td>
+                                    <td class="text-center">20 pólizas</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cálculo de Ingresos Mensuales por Tipo de Cobertura -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="calculo-ingresos" class="card-title"><i class="bi bi-cash-stack"></i> 8. Cálculo de Ingresos Mensuales por Tipo de Cobertura</h2>
+
+                    <p><strong>Cálculo General:</strong></p>
+                    <ul>
+                        <li>Ingresos Terceros Completo: Número de pólizas x $90.000</li>
+                        <li>Ingresos Todo Riesgo: Número de pólizas x $180.000</li>
+                    </ul>
+
+                    <p><strong>Ejemplo para 50 vehículos y 30% de conversión:</strong></p>
+                    <ul>
+                        <li>Ingresos Terceros Completo: 9 x $90.000 = <strong class="highlight">$810.000</strong></li>
+                        <li>Ingresos Todo Riesgo: 6 x $180.000 = <strong class="highlight">$1.080.000</strong></li>
+                        <li><strong>Total Ingresos Mensuales: $1.890.000</strong></li>
+                    </ul>
+
+                    <p><strong>Tabla de Ingresos Mensuales:</strong></p>
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Escenario</th>
+                                    <th class="text-center">Ingresos Mensuales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">50 Vehículos - 30% Conversión</td>
+                                    <td class="text-center">$1.890.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">75 Vehículos - 40% Conversión</td>
+                                    <td class="text-center">$4.050.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">100 Vehículos - 50% Conversión</td>
+                                    <td class="text-center">$6.300.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyección de Ingresos Semestrales -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="proyeccion-ingresos" class="card-title"><i class="bi bi-calendar-check"></i> 9. Proyección de Ingresos Semestrales</h2>
+
+                    <p><strong>Cálculo General:</strong></p>
+                    <p>Ingresos Semestrales = Ingresos Mensuales x 6 meses</p>
+
+                    <p><strong>Resultados:</strong></p>
+
+                    <div class="table-responsive">
+                        <table class="table table-dark table-bordered table-striped table-hover">
+                            <thead>
+                                <tr>
+                                    <th class="text-center">Escenario</th>
+                                    <th class="text-center">Ingresos Semestrales</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-center">50 Vehículos - 30% Conversión</td>
+                                    <td class="text-center">$11.340.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">75 Vehículos - 40% Conversión</td>
+                                    <td class="text-center">$24.300.000</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-center">100 Vehículos - 50% Conversión</td>
+                                    <td class="text-center">$37.800.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Estrategias Adicionales -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="estrategias" class="card-title"><i class="bi bi-lightbulb"></i> 10. Estrategias Adicionales</h2>
+                    <p>Para incrementar las ventas de pólizas y ofrecer un mejor servicio a los clientes actuales, se consideran las siguientes estrategias:</p>
+                    
+                    <h3 class="mt-4"><i class="bi bi-telephone-plus"></i> 1. Venta Telefónica de Mejora de Cobertura</h3>
+                    <p>Se ofrecerá a los compradores actuales una mejora en su cobertura de seguro mediante llamadas telefónicas personalizadas. Esta estrategia permitirá aumentar el número de pólizas de Todo Riesgo, incrementando así el ingreso por comisiones debido al mayor valor de las primas.</p>
+                    
+                    <h3 class="mt-4"><i class="bi bi-clock-history"></i> 2. Seguimiento Proactivo</h3>
+                    <p>Se implementará un sistema de seguimiento para recordar a los clientes las ventajas de mejorar su cobertura o renovar su seguro, lo cual incrementará la tasa de retención de clientes y asegurará ingresos recurrentes.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Consideraciones Adicionales -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="consideraciones" class="card-title"><i class="bi bi-exclamation-circle"></i> 11. Consideraciones Adicionales</h2>
+                    <p>Es importante tener en cuenta los siguientes aspectos que pueden afectar el desempeño del proyecto:</p>
+                    <ul>
+                        <li><strong>Factores Económicos:</strong> Inflación, fluctuaciones del mercado y cambios en la legislación pueden impactar las primas y comisiones.</li>
+                        <li><strong>Competencia:</strong> Otras concesionarias y aseguradoras pueden ofrecer productos similares, por lo que es esencial diferenciarse.</li>
+                        <li><strong>Relación con la Concesionaria:</strong> Mantener una comunicación fluida y acuerdos claros para asegurar una colaboración exitosa.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Conclusiones -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="conclusiones" class="card-title"><i class="bi bi-clipboard-check"></i> 12. Conclusiones</h2>
+                    <p>El proyecto muestra un potencial significativo de ingresos a través de la venta de pólizas de seguros en colaboración con una concesionaria de vehículos. Los escenarios analizados demuestran que, incluso en situaciones conservadoras, los ingresos son sustanciales y pueden incrementarse mediante estrategias adicionales y una gestión eficiente.</p>
+                    <p>La diversificación de productos y la atención personalizada a los clientes pueden fortalecer la posición competitiva y asegurar la sostenibilidad a largo plazo del negocio.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recomendaciones -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="recomendaciones" class="card-title"><i class="bi bi-stars"></i> 13. Recomendaciones</h2>
+                    <ul>
+                        <li><strong>Implementar Programas de Capacitación:</strong> Formar al equipo en técnicas de venta y conocimiento de productos para mejorar la tasa de conversión.</li>
+                        <li><strong>Fortalecer Alianzas Estratégicas:</strong> Establecer acuerdos con aseguradoras líderes para ofrecer productos competitivos y con valor agregado.</li>
+                        <li><strong>Utilizar Herramientas Tecnológicas:</strong> Implementar sistemas CRM para gestionar clientes y automatizar procesos de seguimiento.</li>
+                        <li><strong>Marketing y Promociones:</strong> Desarrollar campañas que destaquen los beneficios de adquirir seguros a través de la concesionaria.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Anexos -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="anexos" class="card-title"><i class="bi bi-paperclip"></i> 14. Anexos</h2>
+                    <p>A continuación, se presentan documentos y recursos adicionales que complementan la información del proyecto:</p>
+                    <ul>
+                        <li><a href="#">Anexo 1: Detalle de las Coberturas de Seguros</a></li>
+                        <li><a href="#">Anexo 2: Tablas de Tarifas y Primas</a></li>
+                        <li><a href="#">Anexo 3: Legislación Vigente en Seguros Automotrices</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preguntas y Respuestas -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="preguntas" class="card-title"><i class="bi bi-question-circle"></i> 15. Preguntas y Respuestas</h2>
+                    <p>Esta sección está dedicada a abordar posibles dudas y consultas sobre el proyecto. Se invita a los inversores y partes interesadas a plantear sus preguntas para una mayor claridad y entendimiento.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Reflexión y Análisis Financiero -->
+        <div class="mb-5">
+            <div class="card bg-dark text-white">
+                <div class="card-body">
+                    <h2 id="reflexion" class="card-title"><i class="bi bi-graph-up-arrow"></i> 16. Reflexión y Análisis Financiero</h2>
+                    <p>El análisis financiero detallado respalda la viabilidad y rentabilidad del proyecto. Se recomienda una revisión periódica de los indicadores clave de desempeño para asegurar el cumplimiento de los objetivos y adaptarse a posibles cambios en el mercado.</p>
+                    <p>La inversión en este proyecto representa una oportunidad sólida con proyecciones positivas y un margen de crecimiento considerable.</p>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- Cierre del container -->
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
